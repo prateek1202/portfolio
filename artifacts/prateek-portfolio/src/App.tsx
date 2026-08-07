@@ -145,7 +145,7 @@ function ExperienceCard({ item, index }: { item: Experience; index: number }) {
 }
 
 function Experience() {
-  return <section id="experience" className="section"><div className="container-wide"><SectionHeading index="03" eyebrow="Experience" title="Closer to the system than the slide deck." description="A timeline of hands-on delivery across automated validation and embedded interfaces." /><div className="relative space-y-12 before:absolute before:bottom-0 before:left-[5px] before:top-0 before:w-px before:bg-border md:before:left-[121px]">{portfolioData.experience.map((item, index) => <ExperienceCard key={item.id} item={item} index={index} />)}</div></div></section>;
+  return <section id="experience" className="section"><div className="container-wide"><SectionHeading index="03" eyebrow="Experience" title="Closer to the system than the slide deck." description="A timeline of hands-on delivery across automated validation and embedded interfaces." /><div className="relative space-y-12 before:absolute before:bottom-0 before:left-[5px] before:top-0 before:hidden before:w-px before:bg-border md:before:left-[121px] md:before:block">{portfolioData.experience.map((item, index) => <ExperienceCard key={item.id} item={item} index={index} />)}</div></div></section>;
 }
 
 function Education() {
