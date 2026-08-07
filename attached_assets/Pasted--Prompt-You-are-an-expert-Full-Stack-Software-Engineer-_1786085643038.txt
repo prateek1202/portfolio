@@ -1,0 +1,573 @@
+
+# Prompt
+
+You are an expert Full-Stack Software Engineer, UI/UX Designer, and Product Designer.
+
+Your task is to create a **modern, premium, responsive portfolio website** using the resume document that I will upload along with this prompt.
+
+## IMPORTANT INSTRUCTIONS
+
+Do **NOT** hardcode any information about me.
+
+Do **NOT** assume any skills, projects, education, work experience, certifications, contact information, achievements, or personal details.
+
+The uploaded resume is the **single source of truth**.
+
+Every piece of content displayed on the website must first be extracted from the uploaded resume and stored in a structured data model before being rendered.
+
+The website must be generated dynamically from this data model.
+
+If the resume is updated later, only the data model should need updating, while the UI remains unchanged.
+
+---
+
+# Technology Stack
+
+Use modern technologies:
+
+* React
+* Next.js
+* TypeScript
+* Tailwind CSS
+* Framer Motion
+* React Icons
+* Lucide Icons
+* ShadCN UI (where useful)
+* GSAP only for premium animations if necessary
+
+The codebase should be production quality.
+
+Follow clean architecture.
+
+Create reusable components.
+
+Avoid duplicate code.
+
+Use proper folder structure.
+
+---
+
+# Design Theme
+
+Use the following color palette.
+
+Primary Dark
+
+#4A4A4A
+
+Secondary Blue Grey
+
+#6D8196
+
+Background
+
+#FFFFE3
+
+Accent / Neutral
+
+#CBCBCB
+
+The website should feel like the portfolio of a senior software engineer rather than a template downloaded from the internet.
+
+Design principles:
+
+* Minimal
+* Elegant
+* Premium
+* Modern
+* Spacious
+* Highly readable
+* Strong typography
+* Soft shadows
+* Rounded corners
+* Glassmorphism only where appropriate
+* Smooth animations
+* Excellent spacing
+* Excellent alignment
+
+Do not use excessive gradients.
+
+Do not use flashy animations.
+
+Focus on professionalism.
+
+---
+
+# Responsive Design
+
+The website must work perfectly on
+
+Desktop
+
+Laptop
+
+Tablet
+
+Mobile
+
+All layouts should be fully responsive.
+
+---
+
+# Resume Parsing
+
+Before generating any UI,
+
+extract all information from the uploaded resume.
+
+Organize the extracted information into a structured JSON object.
+
+Every section of the website must consume this JSON object.
+
+No section should directly read the resume.
+
+---
+
+# Data Structure
+
+Create a file:
+
+```
+data/portfolioData.ts
+```
+
+or
+
+```
+data/portfolio.json
+```
+
+The extracted data should follow a schema similar to this.
+
+```typescript
+export interface PortfolioData {
+
+  personal: {
+    fullName: string;
+    title: string;
+    summary: string;
+    profileImage?: string;
+
+    email: string;
+    phone: string;
+    location: string;
+
+    github?: string;
+    linkedin?: string;
+    website?: string;
+    portfolio?: string;
+  };
+
+  skills: {
+    languages: string[];
+    frameworks: string[];
+    libraries: string[];
+    databases: string[];
+    cloud: string[];
+    tools: string[];
+    testing: string[];
+    technologies: string[];
+    operatingSystems: string[];
+    other: string[];
+  };
+
+  experience: Experience[];
+
+  education: Education[];
+
+  certifications: Certification[];
+
+  projects: Project[];
+
+  achievements: Achievement[];
+
+  publications: Publication[];
+
+  volunteering: Volunteering[];
+
+  awards: Award[];
+
+  languagesKnown: string[];
+
+  interests: string[];
+
+}
+```
+
+Create appropriate interfaces for
+
+Experience
+
+Education
+
+Project
+
+Certification
+
+Achievement
+
+Award
+
+Publication
+
+Volunteering
+
+---
+
+# Website Sections
+
+Generate sections only if data exists.
+
+If a section is missing in the resume, automatically hide it.
+
+Website sections should include:
+
+## Hero
+
+Professional introduction
+
+Name
+
+Current designation
+
+Short tagline
+
+CTA buttons
+
+Resume Download
+
+Contact
+
+Background animation
+
+---
+
+## About
+
+Professional summary
+
+Career objective
+
+Personal introduction
+
+Quick facts
+
+---
+
+## Skills
+
+Categorize skills automatically.
+
+Display as animated skill cards.
+
+Include proficiency indicators only if available in the resume.
+
+Otherwise avoid fake percentages.
+
+---
+
+## Experience
+
+Professional timeline
+
+Company
+
+Role
+
+Duration
+
+Responsibilities
+
+Achievements
+
+Technology stack
+
+Expandable cards.
+
+---
+
+## Projects
+
+One card per project.
+
+Each project should contain
+
+Title
+
+Description
+
+Tech stack
+
+Responsibilities
+
+Challenges solved
+
+Key outcomes
+
+Links if available
+
+GitHub if available
+
+Demo if available
+
+---
+
+## Education
+
+Timeline format
+
+Institution
+
+Degree
+
+Duration
+
+CGPA/Percentage if available
+
+---
+
+## Certifications
+
+Modern certificate cards
+
+Issuing organization
+
+Issue date
+
+Credential ID
+
+Verification link if available
+
+---
+
+## Achievements
+
+Timeline
+
+Badges
+
+Awards
+
+Recognition
+
+---
+
+## Publications
+
+If present.
+
+---
+
+## Volunteer Work
+
+If present.
+
+---
+
+## Contact
+
+Professional contact section
+
+Email
+
+Phone
+
+LinkedIn
+
+GitHub
+
+Location
+
+Contact form
+
+---
+
+## Footer
+
+Professional
+
+Minimal
+
+Social links
+
+Copyright
+
+---
+
+# Animations
+
+Use subtle animations.
+
+Fade in
+
+Slide up
+
+Scroll reveal
+
+Hover elevation
+
+Button ripple
+
+Card hover
+
+Section transitions
+
+Avoid excessive motion.
+
+---
+
+# Navigation
+
+Sticky navigation bar.
+
+Transparent initially.
+
+Solid background while scrolling.
+
+Smooth scrolling.
+
+Active section highlighting.
+
+Mobile hamburger menu.
+
+---
+
+# Additional Features
+
+Dark mode toggle
+
+Light mode toggle
+
+Theme persistence
+
+Back to top button
+
+Loading animation
+
+404 page
+
+SEO optimization
+
+Open Graph metadata
+
+Favicon
+
+Robots.txt
+
+Sitemap.xml
+
+Accessibility support
+
+Keyboard navigation
+
+Lazy loading
+
+Image optimization
+
+Performance optimization
+
+Code splitting
+
+---
+
+# Resume Handling
+
+When the resume is uploaded:
+
+Step 1
+
+Extract all structured information.
+
+Step 2
+
+Populate the PortfolioData object.
+
+Step 3
+
+Render every UI component using PortfolioData.
+
+Never hardcode resume content inside React components.
+
+Components must only consume PortfolioData.
+
+---
+
+# Folder Structure
+
+```
+src/
+
+components/
+layout/
+sections/
+hooks/
+lib/
+styles/
+utils/
+types/
+
+data/
+portfolioData.ts
+
+public/
+
+assets/
+
+app/
+
+```
+
+---
+
+# Code Quality
+
+Use
+
+TypeScript interfaces
+
+Reusable hooks
+
+Reusable components
+
+Utility functions
+
+Consistent naming
+
+Clean architecture
+
+No repeated code
+
+No inline styling
+
+Tailwind only
+
+Reusable animation utilities
+
+---
+
+# UI Quality
+
+The final portfolio should resemble a premium software engineer portfolio suitable for recruiters, hiring managers, engineering leaders, and technical interviewers.
+
+It should prioritize clarity, readability, maintainability, and professionalism over visual gimmicks.
+
+The design should feel custom-built rather than template-based.
+
+---
+
+# Deliverables
+
+Generate:
+
+* Complete project structure
+* Fully functional React/Next.js application
+* All reusable components
+* Tailwind configuration
+* Portfolio data schema
+* Resume parsing layer that extracts structured information from the uploaded resume into `portfolioData`
+* Responsive layouts
+* Theme implementation
+* Animations
+* SEO configuration
+* Accessibility improvements
+* Instructions for replacing the resume in the future so the website automatically reflects updated information by regenerating the `portfolioData` object without requiring UI changes.
