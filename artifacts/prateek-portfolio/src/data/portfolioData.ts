@@ -45,8 +45,8 @@ export interface PortfolioData {
 export const portfolioData: PortfolioData = {
   personal: {
     fullName: 'Prateek Upadhyay',
-    role: 'Test Automation Engineer',
-    company: 'MBRDI via Knodtec Solutions Pvt. Ltd.',
+    role: 'Automation Engineer in Test',
+    company: 'Knodtec Solutions Pvt. Ltd.',
     location: 'Bengaluru, KA',
     email: 'prateek2123@gmail.com',
     phone: '+91-7339791202',
