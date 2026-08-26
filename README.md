@@ -13,24 +13,6 @@ I'm a Test Automation Engineer with ~3 years of experience, currently working on
 - React (SPA)
 - Deployed on [Netlify](https://netlify.com)
 
-## 🚀 Highlights
-
-- **[ShopSentry](https://github.com/)** — Playwright-based hybrid UI/API automation project demonstrating end-to-end testing skills, from basics through network interception and CI/CD via GitHub Actions.
-- Automotive test automation background: Python, Robot Framework, pytest, BDD, CANoe/CAPL.
-
-## 📦 Getting Started
-
-```bash
-git clone https://github.com/<your-username>/<repo-name>.git
-cd <repo-name>
-npm install
-npm start
-```
-
-## 📬 Contact
-
-Feel free to reach out via the site or GitHub!
-
 ---
 
 ⭐ If you like what you see, a star is always appreciated.
