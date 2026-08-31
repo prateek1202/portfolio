@@ -33,6 +33,7 @@ export interface PortfolioData {
     email: string;
     phone: string;
     linkedin: string;
+    github: string;
     summary: string;
     resumeUrl?: string;
   };
@@ -51,6 +52,7 @@ export const portfolioData: PortfolioData = {
     email: 'prateek2123@gmail.com',
     phone: '+91-7339791202',
     linkedin: 'https://linkedin.com/prateek1202',
+    github: 'https://github.com/prateek1202',
     summary: 'Test Automation Engineer with 3 years of experience, currently deployed on a German automotive OEM (MBRDI) via Knodtec Solutions. System-level testing for FOTA functionality involving proprietary TCU, achieving up to 99% test coverage across supported functionalities. Hands-on with Ethernet, CAN, Flexray, UDS, DoIP flashing, and OTA update validation.',
     resumeUrl: resumePdfUrl,
   },
