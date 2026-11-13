@@ -1,22 +1,12 @@
-import resumePdfUrl from '@assets/Naukri_PrateekUpadhyay[3y_0m]_1786084411974.pdf';
-
 export interface Experience {
   id: string;
   company: string;
   role: string;
-  period: string;
-  location?: string;
+  period?: string;
   intro: string;
   details: string[];
   tools: string[];
   outcome?: string;
-}
-
-export interface Education {
-  institution: string;
-  degree: string;
-  period: string;
-  result: string;
 }
 
 export interface SkillGroup {
@@ -24,92 +14,82 @@ export interface SkillGroup {
   items: string[];
 }
 
-export interface PortfolioData {
-  personal: {
-    fullName: string;
-    role: string;
-    company: string;
-    location: string;
-    email: string;
-    phone: string;
-    linkedin: string;
-    github: string;
-    summary: string;
-    resumeUrl?: string;
-  };
-  skills: SkillGroup[];
-  experience: Experience[];
-  education: Education[];
-  highlights: { value: string; label: string; detail: string }[];
-}
-
-export const portfolioData: PortfolioData = {
+export const portfolioData = {
   personal: {
     fullName: 'Prateek Upadhyay',
-    role: 'Automation Engineer in Test',
+    role: 'Test Automation Engineer',
     company: 'Knodtec Solutions Pvt. Ltd.',
     location: 'Bengaluru, KA',
     email: 'prateek2123@gmail.com',
     phone: '+91-7339791202',
-    linkedin: 'https://linkedin.com/prateek1202',
+    linkedin: 'https://linkedin.com/in/prateek1202',
     github: 'https://github.com/prateek1202',
-    summary: 'Test Automation Engineer with 3 years of experience, currently deployed on a German automotive OEM (MBRDI) via Knodtec Solutions. System-level testing for FOTA functionality involving proprietary TCU, achieving up to 99% test coverage across supported functionalities. Hands-on with Ethernet, CAN, Flexray, UDS, DoIP flashing, and OTA update validation.',
-    resumeUrl: resumePdfUrl,
+    summary: 'Test Automation Engineer with over 3.3 years of experience in automotive regression testing and end-to-end FOTA verification and validation (SWE.5 and SWE.6). Experienced in Python automation, Playwright, and keyword-driven testing with Robot Framework, with up to 99% test coverage across multiple software components. Hands-on with CAN, Ethernet, FlexRay, UDS, DoIP flashing, and OTA validation.',
   },
   skills: [
-    { label: 'Automation & test', items: ['Python', 'CAPL Scripting', 'Automotive Testing', 'Software Testing', 'Vector Stack', 'Agile Methodology'] },
-    { label: 'Embedded & architecture', items: ['Embedded Systems', 'C', 'C++', 'AUTOSAR', 'LVGL library', 'Telematics Control Unit'] },
-    { label: 'Vehicle protocols', items: ['Ethernet', 'CAN', 'Flexray', 'UDS Protocol', 'DoIP Flashing', 'UART', 'I2C', 'SPI'] },
-    { label: 'Software & tooling', items: ['JavaScript/Typescript', 'Git & Github', 'SQL', 'OTA/FOTA/Remote Update'] },
+    { label: 'Automotive testing', items: ['HIL FOTA E2E Testing', 'OTA/FOTA', 'Telematics Control Unit', 'DoIP Flashing', 'UDS', 'AUTOSAR', 'Vector Stack', 'CAPL Scripting'] },
+    { label: 'Networking & communication', items: ['CAN', 'CAN-FD', 'Ethernet', 'FlexRay', 'UART', 'I2C', 'SPI'] },
+    { label: 'Programming & databases', items: ['Python', 'C', 'C++', 'CAPL', 'JavaScript/TypeScript', 'SQL'] },
+    { label: 'Test automation & tooling', items: ['Playwright', 'Robot Framework', 'PyTest', 'Selenium', 'Jenkins', 'JFrog Artifactory', 'Docker', 'Git & GitHub'] },
+    { label: 'Test delivery', items: ['Software Quality Assurance', 'Test Planning & Estimation', 'Regression Testing', 'Black-Box Testing', 'Defect Tracking & Prevention', 'Test Documentation & Metrics', 'Agile', 'Client & Stakeholder Management'] },
   ],
   experience: [
     {
       id: 'knodtec-engineer',
       company: 'Knodtec Solutions Pvt. Ltd.',
-      role: 'Test Automation Engineer',
-      period: 'Jan 2024–Present',
-      location: 'Bengaluru, KA',
-      intro: 'System-level validation of FOTA functionality for a proprietary telematics control unit on a German automotive OEM programme.',
+      role: 'Automation Software Engineer',
+      period: 'Jul 2023–Present at Knodtec',
+      intro: 'End-to-end FOTA validation for a major German automotive OEM.',
       details: [
-        'Built Python automation for 200+ test cases, reducing manual regression time by over 40%.',
-        'Set up and debugged the HIL environment with Vector CANoe; automated CANoe/CAPL execution via Python.',
-        'Worked with the telematics control unit, Ignition ECU/EIS, and Head unit across end-to-end OTA update flows.',
-        'Automated release acceptance testing and designed a GUI for live testing results and progress.',
-        'Ensured 100% automation coverage through Jenkins CI/CD; analysed hardware logs and production-line defects.',
-        'Performed DoIP flashing, state-machine analysis, software qualification, system integration testing, and structured bug reporting.',
-        'Collaborated cross-functionally across the testing and software delivery lifecycle.',
+        'Built a Python automation framework with Playwright, Robot Framework, PyTest, and Excel for regression, system, and software qualification testing.',
+        'Automated 200+ FOTA test cases covering vehicle ECU simulations, package configurations, and scenario-specific validation across the final handover test stack.',
+        'Developed end-to-end testing for a telematics ECU using 4G LTE and Wi-Fi. Manually tested Remote Update and On-the-Fly Reprogramming (OFR) in ADAS.',
+        'Defined test scope and qualification criteria across scenarios involving powertrain, windows, handbrake, BMS, and GNSS ECUs.',
+        'Led a four-person team setting up standalone and multi-ECU HIL benches, including a Raspberry Pi client-server integration.',
+        'Performed root-cause analysis on 350+ critical defect tickets across Europe, China, and Asia using hardware logs and internal state machines, and supported in-vehicle investigations.',
+        'Led discussions with business counterparts on test strategy, planning, execution, budgeting, and requirements. Worked with developers to track hardware defects through resolution.',
       ],
-      tools: ['Python', 'Vector CANoe', 'CAPL', 'Jenkins CI/CD', 'DoIP', 'FOTA', 'HIL'],
-      outcome: 'Up to 99% test coverage across supported functionalities',
+      tools: ['Python', 'Playwright', 'Robot Framework', 'PyTest', 'Excel', 'HIL', 'FOTA'],
+      outcome: '90% reduction in manual regression effort',
     },
     {
       id: 'knodtec-intern',
       company: 'Knodtec Solutions Pvt. Ltd.',
       role: 'Software Engineering Intern',
-      period: 'Jul 2023–Jan 2024',
-      location: 'Bengaluru, KA',
-      intro: 'Embedded software development across STM32, Renesas RX23W, and Onsemi RSL10 custom boards.',
+      intro: 'Embedded software development across STM32, Renesas RX23W, and ON Semiconductor RSL10 custom boards.',
       details: [
-        'Developed an HMI in C with LVGL, including dashboards, settings, popups, animations, and touch navigation.',
-        'Optimized LVGL rendering and memory usage on resource-constrained hardware.',
-        'Worked with BLE, GPIO, timers, low power modes, and FOTA on Renesas RX23W and Onsemi RSL10.',
-        'Used pUTTY terminal for embedded workflows, with Embedded C coding and flashing on custom boards.',
+        'Built an STM32 HMI in C with LVGL, including dashboards, settings, pop-ups, animations, and touch navigation.',
+        'Improved LVGL rendering and memory usage through frame buffer, display refresh, and widget update tuning.',
+        'Developed firmware for Renesas RX23W and ON Semiconductor RSL10 with BLE, GPIO, GPT/RTC timers, low-power modes, and FOTA.',
+        'Used PuTTY for UART and log diagnostics, and worked on embedded C, firmware flashing, and custom board bring-up.',
       ],
-      tools: ['Embedded C', 'STM32', 'LVGL', 'Renesas RX23W', 'Onsemi RSL10', 'BLE'],
+      tools: ['Embedded C', 'STM32', 'LVGL', 'Renesas RX23W', 'RSL10', 'BLE'],
+    },
+  ] satisfies Experience[],
+  projects: [
+    {
+      title: 'Autonomous Model Vehicle',
+      tools: 'OpenCV, YOLOv8-Nano, Raspberry Pi 4',
+      details: [
+        'Combined OpenCV road tracking with YOLOv8-Nano perception.',
+        'Used A* path planning for dead ends and obstacle-aware rerouting.',
+        'Implemented encoder-based odometry and closed-loop differential drive control.',
+        'Built a traffic-rule state machine for signal compliance and pedestrian yielding. Validated it with maze scenarios, fault injection, and autonomous navigation tests.',
+      ],
     },
   ],
   education: [
     {
       institution: 'Government Engineering College, Ajmer',
       degree: 'B.Tech in Electronics and Communications Engineering',
-      period: '2019–2023',
-      result: '8.5 CGPA',
+      period: 'Apr 2019–Jul 2023',
+      result: '8.5 / 10.0 CGPA',
     },
   ],
   highlights: [
-    { value: '200+', label: 'test cases automated', detail: 'Python-led regression automation' },
-    { value: '40%+', label: 'manual regression time reduced', detail: 'Through repeatable automation' },
-    { value: '99%', label: 'test coverage reached', detail: 'Across supported functionalities' },
-    { value: '100%', label: 'automation coverage', detail: 'Through Jenkins CI/CD' },
+    { value: '200+', label: 'test cases automated', detail: 'Across the FOTA pipeline' },
+    { value: '90%', label: 'less manual regression effort', detail: 'Python-based regression framework' },
+    { value: 'Up to 99%', label: 'test coverage', detail: 'Across multiple software components' },
+    { value: '350+', label: 'critical defect tickets investigated', detail: 'Root-cause analysis across regions' },
   ],
 };
